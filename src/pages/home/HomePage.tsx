@@ -5,8 +5,8 @@ import styles from './Home.module.scss';
 export const HomePage = () => {
   return (
     <div className={`${styles.home} font-ran`}>
-      <Link to="/">
-        <div className={styles.links}>Home</div>
+      <Link to="/filter">
+        <div className={styles.links}>Filter</div>
       </Link>
       <Link to="/cards">
         <div className={styles.links}>Cards</div>

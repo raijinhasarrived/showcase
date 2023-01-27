@@ -17,7 +17,7 @@ export const CharacterPage = () => {
 
   return (
     <div className="bg-zinc-800 h-screen flex justify-center">
-      <BackLink link="/cards" />
+      <BackLink />
       <HomeLink />
       {isLoading ? (
         <SkeletonOne />
@@ -31,7 +31,7 @@ export const CharacterPage = () => {
             />
           </div>
 
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-start justify-center">
             <h2 className="tracking-widest">Name: {character?.name}</h2>
             <h2 className="tracking-widest">Origin: {character?.origin.name}</h2>
             <h2 className="tracking-widest">Race: {character?.species}</h2>

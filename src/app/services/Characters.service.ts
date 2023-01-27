@@ -34,8 +34,27 @@ const getOne = async (id: string) => {
   const response = await apiClient.get<Character>(`/character/${id}`);
   return response.data;
 };
+
+const getHuman = async () => {
+  const response = await apiClient.get<Result<Character>>('/character/?species=human');
+  return response.data;
+};
+
+const getFemale = async () => {
+  const response = await apiClient.get<Result<Character>>(`/character/?gender=female`);
+  return response.data;
+};
+
+const getDead = async () => {
+  const response = await apiClient.get<Result<Character>>(`/character/?status=dead`);
+  return response.data;
+};
+
 export const CharactersService = {
   getAll,
   getOne,
   getCharacters,
+  getHuman,
+  getDead,
+  getFemale,
 };

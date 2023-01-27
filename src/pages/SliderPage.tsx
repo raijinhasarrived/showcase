@@ -14,7 +14,7 @@ export const SliderPage = () => {
   console.log(objects);
   return (
     <div className="h-screen flex items-center justify-center">
-      <BackLink link="/" />
+      <BackLink />
       <Slider objects={objects} />
     </div>
   );

@@ -1,14 +1,16 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-interface LinkProps {
-  link: string;
-}
+export const BackLink = () => {
+  const navigate = useNavigate();
 
-export const BackLink: FC<LinkProps> = ({ link }) => {
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
-    <Link
-      to={`${link}`}
+    <button
+      onClick={goBack}
       className="text-white absolute top-2 left-1 hover:text-lime-400 rounded-md bg-neutral-900 p-3  z-50">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +25,6 @@ export const BackLink: FC<LinkProps> = ({ link }) => {
           d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
         />
       </svg>
-    </Link>
+    </button>
   );
 };
