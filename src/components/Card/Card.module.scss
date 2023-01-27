@@ -1,0 +1,6 @@
+.card {
+  @apply h-full w-full p-[5px] shadow-xl shadow-inherit bg-zinc-900  hover:bg-gradient-to-r  from-[#7dfc67] via-cyan-500 to-[#32c11f]  rounded-md;
+  > .content {
+    @apply text-white z-50 relative flex flex-col items-center justify-center uppercase tracking-wider bg-zinc-700  rounded-lg;
+  }
+}
