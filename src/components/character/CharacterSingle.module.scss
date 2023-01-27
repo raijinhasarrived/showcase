@@ -1,0 +1,21 @@
+.wrapper {
+  @apply flex flex-col md:flex-col lg:flex-row w-full p-4 text-white uppercase  gap-5 items-center justify-center;
+
+  > .border {
+    background: linear-gradient(-45deg, #8afa01, #02f578, #f8c200, #27f702);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    @apply rounded-full p-2;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}

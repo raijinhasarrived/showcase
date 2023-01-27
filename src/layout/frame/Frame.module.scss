@@ -1,0 +1,9 @@
+.frame {
+  @apply w-24 absolute z-0 flex flex-col gap-3 pt-5 top-0 h-fit;
+  > div {
+    @apply bg-neutral-900 shadow-xl shadow-black;
+  }
+}
+.reflect {
+  transform: scaleX(-1);
+}

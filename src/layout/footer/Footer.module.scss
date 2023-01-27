@@ -1,0 +1,6 @@
+.footer {
+  @apply w-full  flex gap-6 items-center justify-center mt-auto mb-5 text-white;
+  > div {
+    @apply bg-neutral-900 h-9 w-full mx-3 shadow-xl shadow-black;
+  }
+}
