@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import { CharactersService } from '../app/services/Characters.service';
-import { BackLink } from '../components/back/BackLink';
+import { BackLink } from '../components/navigation/BackLink';
 import { Slider } from '../components/slider/Slider';
 export const SliderPage = () => {
   const { isLoading, error, data } = useQuery('character list', async () => {
@@ -14,7 +14,7 @@ export const SliderPage = () => {
   console.log(objects);
   return (
     <div className="h-screen flex items-center justify-center">
-      <BackLink />
+      <BackLink link="/" />
       <Slider objects={objects} />
     </div>
   );

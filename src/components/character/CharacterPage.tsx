@@ -1,7 +1,8 @@
 import { useQuery } from 'react-query';
 import { Link, useParams } from 'react-router-dom';
 import { CharactersService } from '../../app/services/Characters.service';
-import { BackLink } from '../back/BackLink';
+import { BackLink } from '../navigation/BackLink';
+import { HomeLink } from '../navigation/HomeLink';
 import { SkeletonOne } from '../skeleton/SkeletonOne';
 
 import styles from './CharacterSingle.module.scss';
@@ -16,7 +17,8 @@ export const CharacterPage = () => {
 
   return (
     <div className="bg-zinc-800 h-screen flex justify-center">
-      <BackLink />
+      <BackLink link="/cards" />
+      <HomeLink />
       {isLoading ? (
         <SkeletonOne />
       ) : (

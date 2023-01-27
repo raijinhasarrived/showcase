@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-export const BackLink = () => {
+export const HomeLink = () => {
   return (
     <Link
       to="/"
-      className="text-white absolute top-1 left-1 rounded-md bg-neutral-900 p-3 shadow-xl z-50">
+      className="text-white absolute top-2 left-14 hover:text-lime-400 rounded-md bg-neutral-900 p-3  z-50">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
