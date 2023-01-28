@@ -25,8 +25,8 @@ const getAll = async () => {
   return response.data;
 };
 
-const getCharacters = async () => {
-  const response = await apiClient.get<Character[]>('/character');
+const getCharacters = async (page: number) => {
+  const response = await apiClient.get<Result<Character>>(`/character/?page=${page}`);
   return response.data;
 };
 
@@ -37,6 +37,11 @@ const getOne = async (id: string) => {
 
 const getHuman = async () => {
   const response = await apiClient.get<Result<Character>>('/character/?species=human');
+  return response.data;
+};
+
+const getAlien = async () => {
+  const response = await apiClient.get<Result<Character>>('/character/?species=alien');
   return response.data;
 };
 
@@ -55,6 +60,7 @@ export const CharactersService = {
   getOne,
   getCharacters,
   getHuman,
+  getAlien,
   getDead,
   getFemale,
 };
