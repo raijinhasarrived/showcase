@@ -35,23 +35,23 @@ const getOne = async (id: string) => {
   return response.data;
 };
 
-const getHuman = async () => {
-  const response = await apiClient.get<Result<Character>>('/character/?species=human');
+const getHuman = async (page: number) => {
+  const response = await apiClient.get<Result<Character>>(`/character/?page=${page}&species=human`);
   return response.data;
 };
 
-const getAlien = async () => {
-  const response = await apiClient.get<Result<Character>>('/character/?species=alien');
+const getAlien = async (page: number) => {
+  const response = await apiClient.get<Result<Character>>(`/character/?page=${page}&species=alien`);
   return response.data;
 };
 
-const getFemale = async () => {
-  const response = await apiClient.get<Result<Character>>(`/character/?gender=female`);
+const getFemale = async (page: number) => {
+  const response = await apiClient.get<Result<Character>>(`/character/?page=${page}&gender=female`);
   return response.data;
 };
 
-const getDead = async () => {
-  const response = await apiClient.get<Result<Character>>(`/character/?status=dead`);
+const getDead = async (page: number) => {
+  const response = await apiClient.get<Result<Character>>(`/character/?page=${page}&status=dead`);
   return response.data;
 };
 

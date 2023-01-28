@@ -6,7 +6,7 @@ export const HomePage = () => {
   return (
     <div className={`${styles.home} font-ran`}>
       <Link to="/filter">
-        <div className={styles.links}>Filter</div>
+        <div className={styles.links}>Filter/Paganation</div>
       </Link>
       <Link to="/cards">
         <div className={styles.links}>Cards</div>

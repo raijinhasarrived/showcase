@@ -6,6 +6,7 @@ export const FilterPage = () => {
   return (
     <div>
       <BackLink />
+
       <Filter />
     </div>
   );

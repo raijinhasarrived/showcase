@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+
 import { CharactersService } from '../../app/services/Characters.service';
+
 import { Card } from '../Card/Card';
 
 import styles from './Filter.module.scss';
 
 export const Filter = () => {
   const [currentTab, setCurrentTab] = useState('ALL');
+
   const [page, setPage] = useState(1);
 
   const handleTabClick = async (tab: string) => {
+    setPage(1);
     setCurrentTab(tab);
   };
 
@@ -19,21 +23,23 @@ export const Filter = () => {
       case 'ALL':
         return await CharactersService.getCharacters(page);
       case 'Human':
-        return await CharactersService.getHuman();
+        return await CharactersService.getHuman(page);
       case 'Alien':
-        return await CharactersService.getAlien();
+        return await CharactersService.getAlien(page);
       case 'Dead':
-        return await CharactersService.getDead();
+        return await CharactersService.getDead(page);
       case 'Female':
-        return await CharactersService.getFemale();
+        return await CharactersService.getFemale(page);
       default:
         throw new Error(`Invalid tab: ${currentTab}`);
     }
   });
 
   if (isLoading) return <p className="h-screen flex items-center justify-center">Loading</p>;
+
   if (error)
     return <p className="h-screen flex items-center justify-center">Something went wrong</p>;
+
   return (
     <div className={styles.filter}>
       <div className={styles.tabs}>
@@ -48,7 +54,7 @@ export const Filter = () => {
       <div className={`${styles.pagination}`}>
         <button
           onClick={() => setPage((page) => Math.max(page - 1, 0))}
-          disabled={currentTab !== 'ALL' || page === 1}>
+          disabled={data?.info.prev === null}>
           Prev
         </button>
         <button
@@ -57,7 +63,7 @@ export const Filter = () => {
               setPage((page) => page + 1);
             }
           }}
-          disabled={currentTab !== 'ALL' || page === 42}>
+          disabled={data?.info.next === null}>
           Next
         </button>
       </div>
