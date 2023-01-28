@@ -1,6 +1,9 @@
 .home {
   @apply flex sm:flex-row flex-col w-full h-screen text-white gap-4 items-center justify-center text-3xl;
   > a {
-    @apply w-36 h-36 sm:w-80 sm:h-80 bg-neutral-900 flex items-center justify-center rounded-md uppercase tracking-widest;
+    @apply w-36 h-36 sm:w-80 sm:h-80 bg-neutral-900 flex items-center justify-center rounded-md;
+    .links {
+      @apply uppercase tracking-widest flex flex-col;
+    }
   }
 }
