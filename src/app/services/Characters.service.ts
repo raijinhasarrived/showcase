@@ -55,6 +55,11 @@ const getDead = async (page: number) => {
   return response.data;
 };
 
+const getByName = async (name: string) => {
+  const response = await apiClient.get<Result<Character>>(`/character/?name=${name}`);
+  return response.data;
+};
+
 export const CharactersService = {
   getAll,
   getOne,
@@ -63,4 +68,5 @@ export const CharactersService = {
   getAlien,
   getDead,
   getFemale,
+  getByName,
 };
