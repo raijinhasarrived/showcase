@@ -13,9 +13,52 @@
       href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap"
       rel="stylesheet" />
     <!-- Font -->
+
+    <style>
+      body {
+        @apply bg-zinc-800 flex items-center justify-center;
+      }
+      /* Loader */
+      .loader_wrapper {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+      }
+      .spinner {
+        width: 3em;
+        height: 3em;
+        @apply rounded-full bg-[#02ff1b];
+        box-shadow: -10px -10px 10px #73ff00, 0px -10px 10px 0px #73ff00, 10px -10px 10px #73ff00,
+          10px 0 10px #73ff00, 10px 10px 10px 0px #73ff00, 0 10px 10px 0px #73ff00,
+          -10px 10px 10px 0px #73ff00;
+        animation: rot55 0.7s linear infinite;
+      }
+
+      .spinnerin {
+        width: 1.5em;
+        height: 1.5em;
+        transform: translate(-50%, -50%);
+        @apply rounded-full absolute top-1/2 left-1/2;
+      }
+
+      @keyframes rot55 {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loader -->
+      <div class="loader_wrapper">
+        <div class="spinner">
+          <div class="spinnerin"></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 import styles from './Home.module.scss';
 
-import icon from '../../assets/r&m.svg';
+import { Footer } from '../../layout/footer/Footer';
 
 export const HomePage = () => {
   return (
     <div className={styles.wrapper}>
-      <h2 className="uppercase text-white font-ran text-3xl">Rick & Morty</h2>
+      <h2 className="uppercase text-white font-ran text-3xl mt-auto">Rick & Morty</h2>
       <div className={`${styles.home} font-ran`}>
         <Link to="/filter">
           <div className={styles.links}>
@@ -25,6 +25,7 @@ export const HomePage = () => {
           <div className={styles.links}>Slider</div>
         </Link>
       </div>
+      <Footer />
     </div>
   );
 };
